@@ -6,15 +6,17 @@ import java.util.List;
 public class PrimeFactors {
 
     public static List<Integer> generate(int number) {
-        if (number == 4) {
-            return List.of(2, 2);
+        List<Integer> factors = new ArrayList<>();
+        if (number == 1) {
+            return factors;
         }
-        if (number == 6) {
-            return List.of(2, 3);
+        if (number %2 == 0) {
+            factors.add(2);
+            factors.addAll(generate(number / 2));
+            return factors;
         }
-        if (number != 1) {
-            return List.of(number);
-        }
-        return new ArrayList<>();
+        factors.add(number);
+        return factors;
+
     }
 }
