@@ -9,6 +9,9 @@ public class PrimeFactors {
         if (number == 2) {
             return List.of(2);
         }
+        if (number == 3) {
+            return List.of(3);
+        }
         return new ArrayList<>();
     }
 }
