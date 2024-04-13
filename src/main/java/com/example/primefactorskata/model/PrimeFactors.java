@@ -6,11 +6,8 @@ import java.util.List;
 public class PrimeFactors {
 
     public static List<Integer> generate(int number) {
-        if (number == 2) {
-            return List.of(2);
-        }
-        if (number == 3) {
-            return List.of(3);
+        if (number != 1) {
+            return List.of(number);
         }
         return new ArrayList<>();
     }
