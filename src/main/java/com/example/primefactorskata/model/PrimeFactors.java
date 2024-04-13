@@ -10,15 +10,12 @@ public class PrimeFactors {
         if (number == 1) {
             return factors;
         }
-        if (number %3 == 0) {
-            factors.add(3);
-            factors.addAll(generate(number / 3));
-            return factors;
-        }
-        if (number %2 == 0) {
-            factors.add(2);
-            factors.addAll(generate(number / 2));
-            return factors;
+        for (int i = 2; i < (number/2)+1; i++) {
+            if (number % i == 0) {
+                factors.add(i);
+                factors.addAll(generate(number / i));
+                return factors;
+            }
         }
         factors.add(number);
         return factors;
